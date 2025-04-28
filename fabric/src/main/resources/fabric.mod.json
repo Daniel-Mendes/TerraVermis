@@ -16,7 +16,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.example.examplemod.ExampleMod"
+          "ch.daniel_mendes.terra_vermis.TerraVermisFabric"
         ]
     },
     "mixins": [
