@@ -1,5 +1,7 @@
 {
   "item.terra-vermis.earthworm": "Earthworm",
+  "item.terra-vermis.earthworm_dirt": "Topsoil",
+  "item.terra-vermis.earthworm_grass_block": "Topsoil Grass Block",
   "item.terra-vermis.earthworm_fishing_rod": "Fishing rod with bait",
   "itemGroup.terra-vermis.main": "Terra Vermis"
 }

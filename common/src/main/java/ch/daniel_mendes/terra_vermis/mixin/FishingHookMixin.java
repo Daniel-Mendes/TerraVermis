@@ -1,6 +1,6 @@
 package ch.daniel_mendes.terra_vermis.mixin;
 
-import ch.daniel_mendes.terra_vermis.registry.ItemRegistry;
+import ch.daniel_mendes.terra_vermis.registry.ItemsRegistry;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +19,7 @@ public class FishingHookMixin {
         ItemStack mainHandItem = player.getMainHandItem();
         ItemStack offhandItem = player.getOffhandItem();
 
-        boolean hasEarthwormFishingRod = mainHandItem.is(ItemRegistry.EARTHWORM_FISHING_ROD.get()) || offhandItem.is(ItemRegistry.EARTHWORM_FISHING_ROD.get());
+        boolean hasEarthwormFishingRod = mainHandItem.is(ItemsRegistry.EARTHWORM_FISHING_ROD.get()) || offhandItem.is(ItemsRegistry.EARTHWORM_FISHING_ROD.get());
 
         if (hasEarthwormFishingRod) {
             if (!player.isRemoved() && player.isAlive()) {
@@ -33,7 +33,7 @@ public class FishingHookMixin {
         Entity owner = ((FishingHook)(Object)this).getOwner();
         if (!(owner instanceof Player player)) return;
 
-        if (stack.is(ItemRegistry.EARTHWORM_FISHING_ROD.get())) {
+        if (stack.is(ItemsRegistry.EARTHWORM_FISHING_ROD.get())) {
             // Replace the item in the correct hand
             if (player.getMainHandItem() == stack) {
                 player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.FISHING_ROD));

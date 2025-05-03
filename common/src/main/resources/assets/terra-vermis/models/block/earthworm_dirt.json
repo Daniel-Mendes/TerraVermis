@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "terra-vermis:block/earthworm_dirt"
+  }
+}

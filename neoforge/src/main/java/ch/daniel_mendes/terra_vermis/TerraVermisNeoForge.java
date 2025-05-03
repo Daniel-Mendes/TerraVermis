@@ -17,5 +17,6 @@ public class TerraVermisNeoForge {
         Constants.LOG.info("Hello NeoForge world!");
         TerraVermisCommon.init();
 
+        eventBus.addListener(TerraVermisDataGenerator::gatherData);
     }
 }

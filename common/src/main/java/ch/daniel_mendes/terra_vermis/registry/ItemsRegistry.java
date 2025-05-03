@@ -16,7 +16,7 @@ import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 import java.util.function.Function;
 
-public class ItemRegistry {
+public class ItemsRegistry {
     public static void init() {}
 
     protected static ResourceKey<Item> createItemId(String name) {

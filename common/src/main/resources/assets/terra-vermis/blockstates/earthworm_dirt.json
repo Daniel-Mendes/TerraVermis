@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "terra-vermis:block/earthworm_dirt"
+      },
+      {
+        "model": "terra-vermis:block/earthworm_dirt",
+        "y": 90
+      },
+      {
+        "model": "terra-vermis:block/earthworm_dirt",
+        "y": 180
+      },
+      {
+        "model": "terra-vermis:block/earthworm_dirt",
+        "y": 270
+      }
+    ]
+  }
+}

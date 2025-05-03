@@ -9,7 +9,7 @@
 ## Main Features
 
 ### **Natural Spawning**
-- Break **dirt, podzol, coarse dirt, rooted dirt, mycelium**, and more to find earthworms.
+- Break **dirt, podzol, rooted dirt, mycelium**, and more to find earthworms.
 - **Rain and Fortune enchantments increase drop chance**.
 - Worms can also emerge from **composters** or appear naturally in **moist soil**.
 
@@ -24,13 +24,6 @@
 - Worms **die in polluted or unnatural blocks** (for modded environments).
 - Their presence can be **visualized** via particles or **crawling entities**.
 - Combine with **vermicomposters** (if enabled) for passive fertilizer generation.
-
----
-
-## Compatibility
-
-- Minecraft Version: **1.21.5**
-- Mod Loader: **Fabric**, **NeoForge**, ~~**not Forge**~~.
 
 ---
 

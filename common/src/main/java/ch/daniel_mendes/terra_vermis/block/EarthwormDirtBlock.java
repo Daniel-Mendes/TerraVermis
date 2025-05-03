@@ -1,6 +1,6 @@
 package ch.daniel_mendes.terra_vermis.block;
 
-import ch.daniel_mendes.terra_vermis.WormDropLogic;
+import ch.daniel_mendes.terra_vermis.block.util.WormDropLogic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -19,6 +19,6 @@ public class EarthwormDirtBlock extends Block {
     public void playerDestroy(Level level, Player player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack tool) {
         super.playerWillDestroy(level, pos, state, player);
 
-        WormDropLogic.dropWorms(level, pos, state, player);
+        WormDropLogic.tryDroppingWorms(level, pos, state, player);
     }
 }

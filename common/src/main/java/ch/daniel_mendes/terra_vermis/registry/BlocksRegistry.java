@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 
 import java.util.function.Function;
 
-public class BlockRegistry {
+public class BlocksRegistry {
     public static void init() {}
 
     protected static ResourceKey<Block> createBlockId(String name) {
@@ -36,7 +36,7 @@ public class BlockRegistry {
     private static RegistryObject<Block, Block> registerBlock(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties) {
         RegistryObject<Block, Block> reg = registerBlock(createBlockId(name), factory, properties);
 
-        ItemRegistry.ITEMS.register(name, () -> new BlockItem(reg.get(), new Item.Properties().setId(ItemRegistry.createItemId(name))));
+        ItemsRegistry.ITEMS.register(name, () -> new BlockItem(reg.get(), new Item.Properties().setId(ItemsRegistry.createItemId(name))));
 
         return reg;
     }

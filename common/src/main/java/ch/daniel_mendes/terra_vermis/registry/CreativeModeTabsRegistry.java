@@ -8,7 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
-public class CreativeModeTabRegistry {
+public class CreativeModeTabsRegistry {
     public static void init() {}
 
     public static final Component MAIN_TITLE = Component.translatable("itemGroup." + Constants.MOD_ID + ".main");
@@ -17,12 +17,12 @@ public class CreativeModeTabRegistry {
 
     public static final RegistryObject<CreativeModeTab, CreativeModeTab> TERRA_VERMIS_TAB = CREATIVE_MODE_TABS.register(Constants.MOD_ID, () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
             .title(MAIN_TITLE)
-            .icon(() -> new ItemStack(ItemRegistry.EARTHWORM.get()))
+            .icon(() -> new ItemStack(ItemsRegistry.EARTHWORM.get()))
             .displayItems((itemDisplayParameters, output) -> {
-                output.accept(ItemRegistry.EARTHWORM.get());
-                output.accept(ItemRegistry.EARTHWORM_FISHING_ROD.get());
-                output.accept(BlockRegistry.EARTHWORM_DIRT.get());
-                output.accept(BlockRegistry.EARTHWORM_GRASS_BLOCK.get());
+                output.accept(ItemsRegistry.EARTHWORM.get());
+                output.accept(ItemsRegistry.EARTHWORM_FISHING_ROD.get());
+                output.accept(BlocksRegistry.EARTHWORM_DIRT.get());
+                output.accept(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get());
             })
             .build());
 }

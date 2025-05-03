@@ -1,6 +1,6 @@
 package ch.daniel_mendes.terra_vermis.entity.ai.goal;
 
-import ch.daniel_mendes.terra_vermis.registry.BlockRegistry;
+import ch.daniel_mendes.terra_vermis.registry.BlocksRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 
 public class EatEarthwormBlockGoal extends Goal {
     private static final int EAT_ANIMATION_TICKS = 40;
-    private final Predicate<BlockState> IS_EDIBLE = state -> state.is(BlockRegistry.EARTHWORM_DIRT.get()) || state.is(BlockRegistry.EARTHWORM_GRASS_BLOCK.get());
+    private final Predicate<BlockState> IS_EDIBLE = state -> state.is(BlocksRegistry.EARTHWORM_DIRT.get()) || state.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get());
     private final Mob mob;
     private final Level level;
     private int eatAnimationTick;
@@ -68,9 +68,9 @@ public class EatEarthwormBlockGoal extends Goal {
                 if (getServerLevel(this.level).getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
 
 
-                    if (blockState.is(BlockRegistry.EARTHWORM_DIRT.get())) {
+                    if (blockState.is(BlocksRegistry.EARTHWORM_DIRT.get())) {
                         this.level.setBlockAndUpdate(blockpos, Blocks.DIRT.defaultBlockState());
-                    } else if (blockState.is(BlockRegistry.EARTHWORM_GRASS_BLOCK.get())) {
+                    } else if (blockState.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get())) {
                         this.level.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState());
                     }
                 }
@@ -82,9 +82,9 @@ public class EatEarthwormBlockGoal extends Goal {
 
                 if(IS_EDIBLE.test(blockStateBellow)) {
                     if (getServerLevel(this.level).getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-                        if (blockStateBellow.is(BlockRegistry.EARTHWORM_DIRT.get())) {
+                        if (blockStateBellow.is(BlocksRegistry.EARTHWORM_DIRT.get())) {
                             this.level.setBlockAndUpdate(blockposBellow, Blocks.DIRT.defaultBlockState());
-                        } else if (blockStateBellow.is(BlockRegistry.EARTHWORM_GRASS_BLOCK.get())) {
+                        } else if (blockStateBellow.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get())) {
                             this.level.setBlockAndUpdate(blockposBellow, Blocks.GRASS_BLOCK.defaultBlockState());
                         }
                     }
