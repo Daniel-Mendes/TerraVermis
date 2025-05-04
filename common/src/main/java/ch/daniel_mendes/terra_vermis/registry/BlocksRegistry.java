@@ -4,6 +4,7 @@ import ch.daniel_mendes.terra_vermis.Constants;
 import ch.daniel_mendes.terra_vermis.RegistrationProvider;
 import ch.daniel_mendes.terra_vermis.RegistryObject;
 import ch.daniel_mendes.terra_vermis.block.EarthwormDirtBlock;
+import ch.daniel_mendes.terra_vermis.block.EarthwormFarmBlock;
 import ch.daniel_mendes.terra_vermis.block.EarthwormGrassBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
 
@@ -48,5 +50,6 @@ public class BlocksRegistry {
     public static final RegistrationProvider<Block> BLOCKS = RegistrationProvider.get(Registries.BLOCK, Constants.MOD_ID);
 
     public static final RegistryObject<Block, Block> EARTHWORM_DIRT = registerBlock("earthworm_dirt", EarthwormDirtBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT));
-    public static final RegistryObject<Block, Block> EARTHWORM_GRASS_BLOCK = registerBlock("earthworm_grass_block", EarthwormGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).randomTicks());
+    public static final RegistryObject<Block, Block> EARTHWORM_GRASS_BLOCK = registerBlock("earthworm_grass_block", EarthwormGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).randomTicks().noOcclusion().mapColor(MapColor.GRASS));
+    public static final RegistryObject<Block, Block> EARTHWORM_FARM = registerBlock("earthworm_farm", EarthwormFarmBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND).randomTicks().noOcclusion());
 }

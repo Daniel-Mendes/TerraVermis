@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=1": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=2": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=3": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=4": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=5": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=6": {
+      "model": "terra-vermis:block/earthworm_farm"
+    },
+    "moisture=7": {
+      "model": "terra-vermis:block/earthworm_farm_moist"
+    }
+  }
+}

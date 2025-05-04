@@ -17,6 +17,9 @@
     "entrypoints": {
         "main": [
           "ch.daniel_mendes.terra_vermis.TerraVermisFabric"
+        ],
+        "client": [
+            "ch.daniel_mendes.terra_vermis.TerraVermisFabricClient"
         ]
     },
     "mixins": [

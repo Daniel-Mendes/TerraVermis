@@ -6,8 +6,11 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [
     "ChickenAnimalMixin",
+    "CropBlockAccessor",
+    "CropBlockMixin",
     "EnchantmentHelperMixin",
     "FishingHookMixin",
+    "HoeItemMixin",
     "SpreadingSnowyDirtBlockMixin"
   ],
   "client": [
