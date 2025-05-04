@@ -48,5 +48,5 @@ public class BlocksRegistry {
     public static final RegistrationProvider<Block> BLOCKS = RegistrationProvider.get(Registries.BLOCK, Constants.MOD_ID);
 
     public static final RegistryObject<Block, Block> EARTHWORM_DIRT = registerBlock("earthworm_dirt", EarthwormDirtBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT));
-    public static final RegistryObject<Block, Block> EARTHWORM_GRASS_BLOCK = registerBlock("earthworm_grass_block", EarthwormGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK));
+    public static final RegistryObject<Block, Block> EARTHWORM_GRASS_BLOCK = registerBlock("earthworm_grass_block", EarthwormGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).randomTicks());
 }

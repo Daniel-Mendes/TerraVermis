@@ -7,9 +7,13 @@
   "mixins": [
     "ChickenAnimalMixin",
     "EnchantmentHelperMixin",
-    "FishingHookMixin"
+    "FishingHookMixin",
+    "SpreadingSnowyDirtBlockMixin"
   ],
   "client": [
+    "ChickenModelMixin",
+    "ChickenRendererMixin",
+    "ChickenRenderStateMixin",
     "MixinMinecraft"
   ],
   "server": [],

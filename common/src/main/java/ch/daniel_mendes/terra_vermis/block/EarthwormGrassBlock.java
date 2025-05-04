@@ -1,5 +1,8 @@
 package ch.daniel_mendes.terra_vermis.block;
 
+import ch.daniel_mendes.terra_vermis.block.util.WormSpreaderLogic;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import org.jetbrains.annotations.Nullable;
 
 import ch.daniel_mendes.terra_vermis.block.util.WormDropLogic;
@@ -21,5 +24,12 @@ public class EarthwormGrassBlock extends GrassBlock {
         super.playerWillDestroy(level, pos, state, player);
 
         WormDropLogic.tryDroppingWorms(level, pos, state, player);
+    }
+
+    @Override
+    protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        super.randomTick(state, level, pos, random);
+
+        WormSpreaderLogic.trySpreadingWormGrass(level,pos, state, random);
     }
 }
