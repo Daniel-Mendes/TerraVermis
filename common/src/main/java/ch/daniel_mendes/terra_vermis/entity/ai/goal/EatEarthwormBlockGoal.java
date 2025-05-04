@@ -13,8 +13,12 @@ import java.util.EnumSet;
 import java.util.function.Predicate;
 
 public class EatEarthwormBlockGoal extends Goal {
-    private static final int EAT_ANIMATION_TICKS = 40;
+    public static final int EAT_ANIMATION_TICKS = 40;
+    public static final byte EAT_ANIMATION_EVENT = 10;
+    public static final int EAT_GOAL_PRIORITY = 4;
+
     private final Predicate<BlockState> IS_EDIBLE = state -> state.is(BlocksRegistry.EARTHWORM_DIRT.get()) || state.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get());
+
     private final Mob mob;
     private final Level level;
     private int eatAnimationTick;
@@ -37,8 +41,8 @@ public class EatEarthwormBlockGoal extends Goal {
 
     @Override
     public void start() {
-        this.eatAnimationTick = this.adjustedTickDelay(40);
-        this.level.broadcastEntityEvent(this.mob, (byte)10);
+        this.eatAnimationTick = this.adjustedTickDelay(EAT_ANIMATION_TICKS);
+        this.level.broadcastEntityEvent(this.mob, EAT_ANIMATION_EVENT);
         this.mob.getNavigation().stop();
     }
 
@@ -66,8 +70,6 @@ public class EatEarthwormBlockGoal extends Goal {
 
             if (IS_EDIBLE.test(blockState)) {
                 if (getServerLevel(this.level).getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-
-
                     if (blockState.is(BlocksRegistry.EARTHWORM_DIRT.get())) {
                         this.level.setBlockAndUpdate(blockpos, Blocks.DIRT.defaultBlockState());
                     } else if (blockState.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get())) {
