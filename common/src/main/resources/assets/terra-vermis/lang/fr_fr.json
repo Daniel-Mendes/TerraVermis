@@ -1,7 +1,8 @@
 {
   "item.terra-vermis.earthworm": "Ver de terre",
-  "item.terra-vermis.earthworm_dirt": "Terre végétale",
-  "item.terra-vermis.earthworm_grass_block": "Bloc d'herbe végétale",
+  "item.terra-vermis.earthworm_dirt": "Terre riche",
+  "item.terra-vermis.earthworm_grass_block": "Gazon vivant",
+  "item.terra-vermis.earthworm_farmland": "Terre végétale",
   "item.terra-vermis.earthworm_fishing_rod": "Canne à pêche avec appât",
   "itemGroup.terra-vermis.main": "Terra Vermis"
 }

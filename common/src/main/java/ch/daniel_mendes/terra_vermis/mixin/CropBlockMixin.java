@@ -43,7 +43,7 @@ public class CropBlockMixin {
 
     @Inject(method = "mayPlaceOn", at = @At("HEAD"), cancellable = true)
     protected void mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        if (state.is(BlocksRegistry.EARTHWORM_FARM.get())) {
+        if (state.is(BlocksRegistry.EARTHWORM_FARMLAND.get())) {
             cir.setReturnValue(true);
         }
     }

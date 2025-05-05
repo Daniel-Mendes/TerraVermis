@@ -51,5 +51,5 @@ public class BlocksRegistry {
 
     public static final RegistryObject<Block, Block> EARTHWORM_DIRT = registerBlock("earthworm_dirt", EarthwormDirtBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT));
     public static final RegistryObject<Block, Block> EARTHWORM_GRASS_BLOCK = registerBlock("earthworm_grass_block", EarthwormGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).randomTicks().noOcclusion().mapColor(MapColor.GRASS));
-    public static final RegistryObject<Block, Block> EARTHWORM_FARM = registerBlock("earthworm_farm", EarthwormFarmBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND).randomTicks().noOcclusion());
+    public static final RegistryObject<Block, Block> EARTHWORM_FARMLAND = registerBlock("earthworm_farmland", EarthwormFarmBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND).randomTicks().noOcclusion());
 }

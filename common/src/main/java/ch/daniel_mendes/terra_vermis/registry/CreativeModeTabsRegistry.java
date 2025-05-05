@@ -23,7 +23,7 @@ public class CreativeModeTabsRegistry {
                 output.accept(ItemsRegistry.EARTHWORM_FISHING_ROD.get());
                 output.accept(BlocksRegistry.EARTHWORM_DIRT.get());
                 output.accept(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get());
-                output.accept(BlocksRegistry.EARTHWORM_FARM.get());
+                output.accept(BlocksRegistry.EARTHWORM_FARMLAND.get());
             })
             .build());
 }

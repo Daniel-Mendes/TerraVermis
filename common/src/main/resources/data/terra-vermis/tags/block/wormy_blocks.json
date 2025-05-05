@@ -1,6 +1,7 @@
 {
   "values": [
     "terra-vermis:earthworm_dirt",
-    "terra-vermis:earthworm_grass_block"
+    "terra-vermis:earthworm_grass_block",
+    "terra-vermis:earthworm_farmland"
   ]
 }

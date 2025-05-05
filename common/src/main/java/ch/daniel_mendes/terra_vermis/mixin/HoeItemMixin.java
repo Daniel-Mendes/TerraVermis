@@ -30,7 +30,7 @@ public class HoeItemMixin {
             level.playSound(player, blockPos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
 
             if (!level.isClientSide) {
-                BlockState blockState = BlocksRegistry.EARTHWORM_FARM.get().defaultBlockState();
+                BlockState blockState = BlocksRegistry.EARTHWORM_FARMLAND.get().defaultBlockState();
                 level.setBlock(blockPos, blockState, 11);
                 level.gameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Context.of(player, blockState));
 
