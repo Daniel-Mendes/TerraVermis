@@ -17,8 +17,7 @@
   "client": [
     "ChickenModelMixin",
     "ChickenRendererMixin",
-    "ChickenRenderStateMixin",
-    "MixinMinecraft"
+    "ChickenRenderStateMixin"
   ],
   "server": [],
   "injectors": {

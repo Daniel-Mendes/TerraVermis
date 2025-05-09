@@ -25,7 +25,7 @@ public class ComposterBlockMixin {
     private static void dropEarthwormFarmChance(Entity entity, BlockState state, Level level, BlockPos pos, CallbackInfoReturnable<BlockState> cir) {
         if (!level.isClientSide && level.random.nextInt(100) < EARTHWORM_DROP_CHANCE) {
             Vec3 vec3 = Vec3.atLowerCornerWithOffset(pos, 0.5, 1.01, 0.5).offsetRandom(level.random, 0.7F);
-            ItemStack earthwormFarm = new ItemStack(BlocksRegistry.EARTHWORM_DIRT.get());
+            ItemStack earthwormFarm = new ItemStack(BlocksRegistry.WORMY_DIRT.get());
             ItemEntity drop = new ItemEntity(level, vec3.x(), vec3.y(), vec3.z(), earthwormFarm);
             drop.setDefaultPickUpDelay();
             level.addFreshEntity(drop);

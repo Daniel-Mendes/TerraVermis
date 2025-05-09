@@ -15,9 +15,9 @@ public class WormSpreaderLogic {
         for (BlockPos adjacentPos : BlockPos.betweenClosed(pos.offset(-1, 0, -1), pos.offset(1, 0, 1))) {
             if (!adjacentPos.equals(pos)) {  // Avoid checking the block itself
                 BlockState adjacentState = level.getBlockState(adjacentPos);
-                if (adjacentState.is(BlocksRegistry.EARTHWORM_DIRT.get()) && canPropagate(state, level, adjacentPos)) {
+                if (adjacentState.is(BlocksRegistry.WORMY_DIRT.get()) && canPropagate(state, level, adjacentPos)) {
                     // Replace earthworm dirt with earthworm grass block
-                    level.setBlockAndUpdate(adjacentPos, BlocksRegistry.EARTHWORM_GRASS_BLOCK.get().defaultBlockState());
+                    level.setBlockAndUpdate(adjacentPos, BlocksRegistry.WORMY_GRASS_BLOCK.get().defaultBlockState());
                 }
             }
         }

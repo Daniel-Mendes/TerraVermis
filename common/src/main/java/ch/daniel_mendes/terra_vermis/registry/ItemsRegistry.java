@@ -3,7 +3,7 @@ package ch.daniel_mendes.terra_vermis.registry;
 import ch.daniel_mendes.terra_vermis.Constants;
 import ch.daniel_mendes.terra_vermis.RegistrationProvider;
 import ch.daniel_mendes.terra_vermis.RegistryObject;
-import ch.daniel_mendes.terra_vermis.item.EarthwormFishingRodItem;
+import ch.daniel_mendes.terra_vermis.item.FishingRodWithBaitItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -51,5 +51,5 @@ public class ItemsRegistry {
                 )
     );
 
-    public static final RegistryObject<Item, Item> EARTHWORM_FISHING_ROD = registerItem("earthworm_fishing_rod", EarthwormFishingRodItem::new, new Item.Properties().durability(64).enchantable(1));
+    public static final RegistryObject<Item, Item> FISHING_ROD_WITH_BAIT = registerItem("fishing_rod_with_bait", FishingRodWithBaitItem::new, new Item.Properties().durability(64).enchantable(1));
 }

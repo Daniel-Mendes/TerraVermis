@@ -20,10 +20,12 @@ public class CreativeModeTabsRegistry {
             .icon(() -> new ItemStack(ItemsRegistry.EARTHWORM.get()))
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ItemsRegistry.EARTHWORM.get());
-                output.accept(ItemsRegistry.EARTHWORM_FISHING_ROD.get());
-                output.accept(BlocksRegistry.EARTHWORM_DIRT.get());
-                output.accept(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get());
-                output.accept(BlocksRegistry.EARTHWORM_FARMLAND.get());
+                output.accept(ItemsRegistry.FISHING_ROD_WITH_BAIT.get());
+                output.accept(BlocksRegistry.WORMY_DIRT.get());
+                output.accept(BlocksRegistry.WORMY_GRASS_BLOCK.get());
+                output.accept(BlocksRegistry.WORMY_FARMLAND.get());
+                output.accept(BlocksRegistry.WORMY_PODZOL.get());
+                output.accept(BlocksRegistry.WORMY_MYCELIUM.get());
             })
             .build());
 }

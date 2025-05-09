@@ -3,9 +3,10 @@ package ch.daniel_mendes.terra_vermis.registry;
 import ch.daniel_mendes.terra_vermis.Constants;
 import ch.daniel_mendes.terra_vermis.RegistrationProvider;
 import ch.daniel_mendes.terra_vermis.RegistryObject;
-import ch.daniel_mendes.terra_vermis.block.EarthwormDirtBlock;
-import ch.daniel_mendes.terra_vermis.block.EarthwormFarmBlock;
-import ch.daniel_mendes.terra_vermis.block.EarthwormGrassBlock;
+import ch.daniel_mendes.terra_vermis.block.WormyDirtBlock;
+import ch.daniel_mendes.terra_vermis.block.WormyFarmBlock;
+import ch.daniel_mendes.terra_vermis.block.WormyGrassBlock;
+import ch.daniel_mendes.terra_vermis.block.WormyPodzolBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -13,8 +14,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.MyceliumBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.MapColor;
 
 import java.util.function.Function;
 
@@ -49,7 +50,9 @@ public class BlocksRegistry {
 
     public static final RegistrationProvider<Block> BLOCKS = RegistrationProvider.get(Registries.BLOCK, Constants.MOD_ID);
 
-    public static final RegistryObject<Block, Block> EARTHWORM_DIRT = registerBlock("earthworm_dirt", EarthwormDirtBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT));
-    public static final RegistryObject<Block, Block> EARTHWORM_GRASS_BLOCK = registerBlock("earthworm_grass_block", EarthwormGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).randomTicks().noOcclusion().mapColor(MapColor.GRASS));
-    public static final RegistryObject<Block, Block> EARTHWORM_FARMLAND = registerBlock("earthworm_farmland", EarthwormFarmBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND).randomTicks().noOcclusion());
+    public static final RegistryObject<Block, Block> WORMY_DIRT = registerBlock("wormy_dirt", WormyDirtBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.DIRT).noOcclusion());
+    public static final RegistryObject<Block, Block> WORMY_GRASS_BLOCK = registerBlock("wormy_grass_block", WormyGrassBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.GRASS_BLOCK).randomTicks());
+    public static final RegistryObject<Block, Block> WORMY_FARMLAND = registerBlock("wormy_farmland", WormyFarmBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FARMLAND).randomTicks());
+    public static final RegistryObject<Block, Block> WORMY_PODZOL = registerBlock("wormy_podzol", WormyPodzolBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.PODZOL));
+    public static final RegistryObject<Block, Block> WORMY_MYCELIUM = registerBlock("wormy_mycelium", MyceliumBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.MYCELIUM));
 }

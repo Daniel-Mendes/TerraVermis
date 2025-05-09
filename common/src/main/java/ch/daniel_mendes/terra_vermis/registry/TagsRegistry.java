@@ -4,6 +4,7 @@ import ch.daniel_mendes.terra_vermis.Constants;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class TagsRegistry {
@@ -18,6 +19,15 @@ public class TagsRegistry {
 
         private static TagKey<Block> create(String name) {
             return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
+        }
+    }
+
+    public static class BiomeTags {
+        public static final TagKey<Biome> HAS_WORMY_MYCELIUM = create("has_wormy_mycelium");
+        public static final TagKey<Biome> HAS_WORMY_PODZOL = create("has_wormy_podzol");
+
+        private static TagKey<Biome> create(String name) {
+            return TagKey.create(Registries.BIOME, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
         }
     }
 }

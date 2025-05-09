@@ -16,10 +16,10 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-          "ch.daniel_mendes.terra_vermis.TerraVermisFabric"
+            "ch.daniel_mendes.terra_vermis.fabric.TerraVermisFabric"
         ],
         "client": [
-            "ch.daniel_mendes.terra_vermis.TerraVermisFabricClient"
+            "ch.daniel_mendes.terra_vermis.client.fabric.TerraVermisFabricClient"
         ]
     },
     "mixins": [

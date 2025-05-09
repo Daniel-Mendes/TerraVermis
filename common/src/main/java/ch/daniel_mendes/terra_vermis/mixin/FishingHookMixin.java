@@ -19,7 +19,7 @@ public class FishingHookMixin {
         ItemStack mainHandItem = player.getMainHandItem();
         ItemStack offhandItem = player.getOffhandItem();
 
-        boolean hasEarthwormFishingRod = mainHandItem.is(ItemsRegistry.EARTHWORM_FISHING_ROD.get()) || offhandItem.is(ItemsRegistry.EARTHWORM_FISHING_ROD.get());
+        boolean hasEarthwormFishingRod = mainHandItem.is(ItemsRegistry.FISHING_ROD_WITH_BAIT.get()) || offhandItem.is(ItemsRegistry.FISHING_ROD_WITH_BAIT.get());
 
         if (hasEarthwormFishingRod) {
             if (!player.isRemoved() && player.isAlive()) {
@@ -33,7 +33,7 @@ public class FishingHookMixin {
         Entity owner = ((FishingHook)(Object)this).getOwner();
         if (!(owner instanceof Player player)) return;
 
-        if (stack.is(ItemsRegistry.EARTHWORM_FISHING_ROD.get())) {
+        if (stack.is(ItemsRegistry.FISHING_ROD_WITH_BAIT.get())) {
             // Replace the item in the correct hand
             if (player.getMainHandItem() == stack) {
                 player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.FISHING_ROD));

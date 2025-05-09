@@ -1,8 +1,10 @@
 {
   "item.terra-vermis.earthworm": "Ver de terre",
-  "item.terra-vermis.earthworm_dirt": "Terre riche",
-  "item.terra-vermis.earthworm_grass_block": "Gazon vivant",
-  "item.terra-vermis.earthworm_farmland": "Terre végétale",
-  "item.terra-vermis.earthworm_fishing_rod": "Canne à pêche avec appât",
+  "item.terra-vermis.wormy_dirt": "Terre avec vers",
+  "item.terra-vermis.wormy_grass_block": "Bloc de terre avec vers",
+  "item.terra-vermis.wormy_farmland": "Terre végétale",
+  "item.terra-vermis.wormy_podzol": "Podzol avec vers",
+  "item.terra-vermis.wormy_mycelium": "Mycélium avec vers",
+  "item.terra-vermis.fishing_rod_with_bait": "Canne à pêche avec appât",
   "itemGroup.terra-vermis.main": "Terra Vermis"
 }

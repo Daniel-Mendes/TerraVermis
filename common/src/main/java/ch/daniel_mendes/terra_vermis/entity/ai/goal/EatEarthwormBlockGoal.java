@@ -17,7 +17,7 @@ public class EatEarthwormBlockGoal extends Goal {
     public static final byte EAT_ANIMATION_EVENT = 10;
     public static final int EAT_GOAL_PRIORITY = 4;
 
-    private final Predicate<BlockState> IS_EDIBLE = state -> state.is(BlocksRegistry.EARTHWORM_DIRT.get()) || state.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get());
+    private final Predicate<BlockState> IS_EDIBLE = state -> state.is(BlocksRegistry.WORMY_DIRT.get()) || state.is(BlocksRegistry.WORMY_GRASS_BLOCK.get());
 
     private final Mob mob;
     private final Level level;
@@ -70,9 +70,9 @@ public class EatEarthwormBlockGoal extends Goal {
 
             if (IS_EDIBLE.test(blockState)) {
                 if (getServerLevel(this.level).getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-                    if (blockState.is(BlocksRegistry.EARTHWORM_DIRT.get())) {
+                    if (blockState.is(BlocksRegistry.WORMY_DIRT.get())) {
                         this.level.setBlockAndUpdate(blockpos, Blocks.DIRT.defaultBlockState());
-                    } else if (blockState.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get())) {
+                    } else if (blockState.is(BlocksRegistry.WORMY_GRASS_BLOCK.get())) {
                         this.level.setBlockAndUpdate(blockpos, Blocks.GRASS_BLOCK.defaultBlockState());
                     }
                 }
@@ -84,9 +84,9 @@ public class EatEarthwormBlockGoal extends Goal {
 
                 if(IS_EDIBLE.test(blockStateBellow)) {
                     if (getServerLevel(this.level).getGameRules().getBoolean(GameRules.RULE_MOBGRIEFING)) {
-                        if (blockStateBellow.is(BlocksRegistry.EARTHWORM_DIRT.get())) {
+                        if (blockStateBellow.is(BlocksRegistry.WORMY_DIRT.get())) {
                             this.level.setBlockAndUpdate(blockposBellow, Blocks.DIRT.defaultBlockState());
-                        } else if (blockStateBellow.is(BlocksRegistry.EARTHWORM_GRASS_BLOCK.get())) {
+                        } else if (blockStateBellow.is(BlocksRegistry.WORMY_GRASS_BLOCK.get())) {
                             this.level.setBlockAndUpdate(blockposBellow, Blocks.GRASS_BLOCK.defaultBlockState());
                         }
                     }

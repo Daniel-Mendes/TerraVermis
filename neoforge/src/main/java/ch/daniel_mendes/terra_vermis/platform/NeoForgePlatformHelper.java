@@ -1,6 +1,5 @@
 package ch.daniel_mendes.terra_vermis.platform;
 
-import ch.daniel_mendes.terra_vermis.platform.services.IPlatformHelper;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 

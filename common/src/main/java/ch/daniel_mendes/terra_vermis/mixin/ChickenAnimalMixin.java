@@ -1,7 +1,7 @@
 package ch.daniel_mendes.terra_vermis.mixin;
 
 import ch.daniel_mendes.terra_vermis.entity.ai.goal.EatEarthwormBlockGoal;
-import ch.daniel_mendes.terra_vermis.entity.animal.ChickenDuck;
+import ch.daniel_mendes.terra_vermis.entity.animal.ChickenAccessor;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -19,7 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Chicken.class)
-public class ChickenAnimalMixin extends Animal implements ChickenDuck {
+public class ChickenAnimalMixin extends Animal implements ChickenAccessor {
     private int eatAnimationTick;
     private EatEarthwormBlockGoal eatEarthwormBlockGoal;
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "terra-vermis:item/fishing_rod_with_bait"
+  }
+}

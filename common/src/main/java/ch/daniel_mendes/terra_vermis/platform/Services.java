@@ -1,7 +1,8 @@
 package ch.daniel_mendes.terra_vermis.platform;
 
 import ch.daniel_mendes.terra_vermis.Constants;
-import ch.daniel_mendes.terra_vermis.platform.services.IPlatformHelper;
+import ch.daniel_mendes.terra_vermis.platform.services.IClientPlatformHelper;
+import ch.daniel_mendes.terra_vermis.platform.services.ICommonPlatformHelper;
 
 import java.util.ServiceLoader;
 
@@ -13,7 +14,8 @@ public class Services {
     // In this example we provide a platform helper which provides information about what platform the mod is running on.
     // For example this can be used to check if the code is running on Forge vs Fabric, or to ask the modloader if another
     // mod is loaded.
-    public static final IPlatformHelper PLATFORM = load(IPlatformHelper.class);
+    public static final IClientPlatformHelper CLIENT = load(IClientPlatformHelper.class);
+    public static final ICommonPlatformHelper COMMON = load(ICommonPlatformHelper.class);
 
     // This code is used to load a service for the current environment. Your implementation of the service must be defined
     // manually by including a text file in META-INF/services named with the fully qualified class name of the service.

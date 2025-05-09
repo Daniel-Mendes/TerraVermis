@@ -1,6 +1,6 @@
 package ch.daniel_mendes.terra_vermis.mixin;
 
-import ch.daniel_mendes.terra_vermis.block.EarthwormFarmBlock;
+import ch.daniel_mendes.terra_vermis.block.WormyFarmBlock;
 import ch.daniel_mendes.terra_vermis.registry.BlocksRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -24,7 +24,7 @@ public class CropBlockMixin {
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random, CallbackInfo ci) {
         CropBlock cropBlock = (CropBlock) (Object) this;
 
-        if (level.getBlockState(pos.below()).getBlock() instanceof EarthwormFarmBlock) {
+        if (level.getBlockState(pos.below()).getBlock() instanceof WormyFarmBlock) {
             int age = cropBlock.getAge(state);
 
             if (age < cropBlock.getMaxAge()) {
@@ -43,7 +43,7 @@ public class CropBlockMixin {
 
     @Inject(method = "mayPlaceOn", at = @At("HEAD"), cancellable = true)
     protected void mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        if (state.is(BlocksRegistry.EARTHWORM_FARMLAND.get())) {
+        if (state.is(BlocksRegistry.WORMY_FARMLAND.get())) {
             cir.setReturnValue(true);
         }
     }
