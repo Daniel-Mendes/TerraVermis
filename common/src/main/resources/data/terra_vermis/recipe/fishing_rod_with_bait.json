@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": "minecraft:fishing_rod",
+    "X": "terra_vermis:earthworm"
+  },
+  "pattern": [
+    "# ",
+    " X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "terra_vermis:fishing_rod_with_bait"
+  }
+}

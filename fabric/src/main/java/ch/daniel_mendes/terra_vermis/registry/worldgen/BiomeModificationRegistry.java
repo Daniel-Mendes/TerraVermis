@@ -8,8 +8,8 @@ public class BiomeModificationRegistry {
     public static void register() {
         BiomeModifications.addFeature(
             BiomeSelectors.foundInOverworld(),
-            GenerationStep.Decoration.UNDERGROUND_ORES,
-            PlacedFeatureRegistry.PATCH_EARTHWORM_PLACED_KEY
+            GenerationStep.Decoration.VEGETAL_DECORATION,
+            PlacedFeatureRegistry.createPlacedFeatureKey("disk_earthworm")
         );
     }
 }

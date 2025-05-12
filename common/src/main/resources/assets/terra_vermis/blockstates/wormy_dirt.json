@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "terra_vermis:block/wormy_dirt"
+      },
+      {
+        "model": "terra_vermis:block/wormy_dirt",
+        "y": 90
+      },
+      {
+        "model": "terra_vermis:block/wormy_dirt",
+        "y": 180
+      },
+      {
+        "model": "terra_vermis:block/wormy_dirt",
+        "y": 270
+      }
+    ]
+  }
+}

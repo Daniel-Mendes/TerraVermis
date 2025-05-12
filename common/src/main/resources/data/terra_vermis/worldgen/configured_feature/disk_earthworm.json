@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "terra_vermis:disk_earthworm_1h",
+    "features": [
+      {
+        "chance": 0.33,
+        "feature": "terra_vermis:disk_earthworm_2h"
+      },
+      {
+        "chance": 0.33,
+        "feature": "terra_vermis:disk_earthworm_3h"
+      }
+    ]
+  }
+}
