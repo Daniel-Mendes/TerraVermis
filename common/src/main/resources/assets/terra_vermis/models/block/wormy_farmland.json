@@ -1,7 +1,33 @@
 {
-  "parent": "minecraft:block/template_farmland",
+  "parent": "minecraft:block/block",
   "textures": {
-    "dirt": "terra_vermis:block/wormy_dirt",
-    "top": "minecraft:block/farmland"
-  }
+    "top": "minecraft:block/farmland",
+    "dirt": "minecraft:block/dirt",
+    "overlay": "terra_vermis:block/wormy_dirt_overlay",
+    "particle": "minecraft:block/dirt"
+  },
+  "elements": [
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 15, 16 ],
+      "faces": {
+        "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#dirt", "cullface": "down" },
+        "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#top" },
+        "north": { "uv": [ 0, 1, 16, 16 ], "texture": "#dirt", "cullface": "north" },
+        "south": { "uv": [ 0, 1, 16, 16 ], "texture": "#dirt", "cullface": "south" },
+        "west":  { "uv": [ 0, 1, 16, 16 ], "texture": "#dirt", "cullface": "west" },
+        "east":  { "uv": [ 0, 1, 16, 16 ], "texture": "#dirt", "cullface": "east" }
+      }
+    },
+    {
+      "from": [ 0, 0, 0 ],
+      "to": [ 16, 15, 16 ],
+      "faces": {
+        "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "north" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "south" },
+        "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "west" },
+        "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#overlay", "cullface": "east" }
+      }
+    }
+  ]
 }
