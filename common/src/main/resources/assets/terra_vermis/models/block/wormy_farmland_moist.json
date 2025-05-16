@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "top": "minecraft:block/farmland",
+    "top": "minecraft:block/farmland_moist",
     "dirt": "minecraft:block/dirt",
     "overlay": "terra_vermis:block/wormy_dirt_overlay",
     "particle": "minecraft:block/dirt"
