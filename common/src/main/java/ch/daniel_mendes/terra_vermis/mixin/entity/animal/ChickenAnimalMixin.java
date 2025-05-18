@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.entity.animal;
 
 import ch.daniel_mendes.terra_vermis.entity.ai.goal.EatEarthwormBlockGoal;
 import ch.daniel_mendes.terra_vermis.entity.animal.ChickenAccessor;

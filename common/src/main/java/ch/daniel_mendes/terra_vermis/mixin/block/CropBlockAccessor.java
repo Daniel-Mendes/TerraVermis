@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;

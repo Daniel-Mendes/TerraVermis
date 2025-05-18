@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.entity;
 
 import ch.daniel_mendes.terra_vermis.registry.ItemsRegistry;
 import net.minecraft.world.InteractionHand;

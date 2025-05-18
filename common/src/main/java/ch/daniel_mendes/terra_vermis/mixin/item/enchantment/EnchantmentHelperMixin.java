@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.item.enchantment;
 
 import ch.daniel_mendes.terra_vermis.registry.ItemsRegistry;
 import net.minecraft.server.level.ServerLevel;

@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.client;
 
 import ch.daniel_mendes.terra_vermis.Constants;
 import ch.daniel_mendes.terra_vermis.registry.ItemsRegistry;

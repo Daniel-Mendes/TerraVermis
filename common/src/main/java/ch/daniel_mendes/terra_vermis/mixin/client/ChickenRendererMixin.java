@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.client;
 
 import ch.daniel_mendes.terra_vermis.client.renderer.entity.state.ChickenRenderStateDuck;
 import ch.daniel_mendes.terra_vermis.entity.animal.ChickenAccessor;

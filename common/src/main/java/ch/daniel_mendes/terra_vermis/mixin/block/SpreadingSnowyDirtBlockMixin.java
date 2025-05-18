@@ -1,4 +1,4 @@
-package ch.daniel_mendes.terra_vermis.mixin;
+package ch.daniel_mendes.terra_vermis.mixin.block;
 
 import ch.daniel_mendes.terra_vermis.block.util.WormSpreaderLogic;
 import net.minecraft.core.BlockPos;
