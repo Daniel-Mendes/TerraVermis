@@ -50,7 +50,7 @@ public interface ICommonPlatformHelper {
 
     void registerVillagerOffers(ResourceKey<VillagerProfession> profession, int level, VillagerTrades.ItemListing... trades);
 
-    void registerCompostable(ItemLike item, float chance);
+    void registerCompostable(Supplier<Item> item, float chance);
 
     Supplier<CreativeModeTab> registerCreativeModeTab(String name, Supplier<CreativeModeTab> tab);
 }

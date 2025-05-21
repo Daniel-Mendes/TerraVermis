@@ -89,9 +89,9 @@ public class NeoForgeCommonPlatformHelper implements ICommonPlatformHelper {
     }
 
     @Override
-    public void registerCompostable(ItemLike item, float chance) {
+    public void registerCompostable(Supplier<Item> item, float chance) {
        // DEPRECATED in flavor of data_maps
-        ComposterBlock.COMPOSTABLES.put(item.asItem(), chance);
+        ComposterBlock.COMPOSTABLES.put(() -> item.get(), chance);
     }
 
     @Override

@@ -68,8 +68,8 @@ public class FabricCommonPlatformHelper implements ICommonPlatformHelper {
     }
 
     @Override
-    public void registerCompostable(ItemLike item, float chance) {
-        CompostingChanceRegistry.INSTANCE.add(item, chance);
+    public void registerCompostable(Supplier<Item> item, float chance) {
+        CompostingChanceRegistry.INSTANCE.add(item.get(), chance);
     }
 
     @Override

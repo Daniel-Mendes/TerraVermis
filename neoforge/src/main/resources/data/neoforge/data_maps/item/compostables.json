@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": {
+    "terra_vermis:earthworm": {
+      "chance": 0.3,
+      "can_villager_compost": true
+    }
+  }
+}
