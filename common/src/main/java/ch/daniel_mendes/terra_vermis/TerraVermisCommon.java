@@ -10,7 +10,6 @@ public class TerraVermisCommon {
         CreativeModeTabsRegistry.init();
         TagsRegistry.init();
         CompostableItemRegistry.init();
-        //FeaturesRegistry.init();
         VillagerTradesRegistry.init();
     }
 }
