@@ -1,7 +1,7 @@
-name: Build and upload mod
+name: Build and Upload Mod
 on: [push, pull_request]
 permissions:
-  contents: read
+  contents: write
   actions: write
 jobs:
   build:
