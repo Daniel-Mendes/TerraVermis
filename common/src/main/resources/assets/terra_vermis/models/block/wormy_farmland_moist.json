@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/block",
+  "render_type": "cutout",
   "textures": {
     "top": "minecraft:block/farmland_moist",
     "dirt": "minecraft:block/dirt",

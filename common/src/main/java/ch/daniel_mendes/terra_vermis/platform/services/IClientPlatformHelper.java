@@ -9,7 +9,7 @@ public interface IClientPlatformHelper {
 
     <T extends Block> void registerRenderLayer(Supplier<T> block, RenderType type);
 
-    void registerBlockColor(Supplier<Block> block, BlockColorProvider colorProvider);
+    void registerBlockColor(Block block, BlockColorProvider colorProvider);
 
     interface BlockColorProvider {
         int getColor(net.minecraft.world.level.block.state.BlockState state, net.minecraft.world.level.BlockAndTintGetter getter, net.minecraft.core.BlockPos pos, int tintIndex);

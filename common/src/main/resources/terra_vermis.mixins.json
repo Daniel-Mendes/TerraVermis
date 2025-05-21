@@ -6,7 +6,6 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [
     "block.ComposterBlockMixin",
-    "block.CropBlockAccessor",
     "block.CropBlockMixin",
     "block.SpreadingSnowyDirtBlockMixin",
     "entity.FishingHookMixin",

@@ -7,7 +7,7 @@ import net.minecraft.client.renderer.BiomeColors;
 public class BlockColorsRegistry {
     public static void init() {
         Services.CLIENT.registerBlockColor(
-            BlocksRegistry.WORMY_GRASS_BLOCK,
+            BlocksRegistry.WORMY_GRASS_BLOCK.get(),
             (state, blockAndTintGetter, pos, tintIndex) -> {
                 if (blockAndTintGetter != null && pos != null) {
                     return BiomeColors.getAverageGrassColor(blockAndTintGetter, pos);

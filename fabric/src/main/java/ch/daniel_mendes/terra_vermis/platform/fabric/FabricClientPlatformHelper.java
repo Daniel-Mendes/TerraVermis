@@ -15,8 +15,8 @@ public class FabricClientPlatformHelper implements IClientPlatformHelper {
     }
 
     @Override
-    public void registerBlockColor(Supplier<Block> block, BlockColorProvider colorProvider) {
+    public void registerBlockColor(Block block, BlockColorProvider colorProvider) {
         ColorProviderRegistry.BLOCK.register(
-                colorProvider::getColor, block.get());
+                colorProvider::getColor, block);
     }
 }
