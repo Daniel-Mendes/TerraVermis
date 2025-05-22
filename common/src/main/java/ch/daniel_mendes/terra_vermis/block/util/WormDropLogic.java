@@ -12,6 +12,7 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -29,7 +30,9 @@ public class WormDropLogic {
     private static final TagKey<Block> MUDDY_BLOCKS = TagsRegistry.BlockTags.MUDDY_BLOCKS;
     private static final TagKey<Block> WORMY_BLOCKS = TagsRegistry.BlockTags.WORMY_BLOCKS;
 
-    public static void tryDroppingWorms(Level level, BlockPos pos, BlockState state, Player player) {
+    public static void tryDroppingWorms(LevelAccessor levelAccessor, BlockPos pos, BlockState state, Player player) {
+        if (!(levelAccessor instanceof Level level)) return;
+
         boolean isFertileBlock = state.is(FERTILE_BLOCKS);
         boolean isHibernationBlock = state.hasProperty(BlockStateProperties.SNOWY) && state.getValue(BlockStateProperties.SNOWY) && state.is(HIBERNATION_BLOCKS);
         boolean isMuddyBlock = state.is(MUDDY_BLOCKS);
@@ -51,7 +54,7 @@ public class WormDropLogic {
         ), player.getMainHandItem());
         chance += fortuneLevel * FORTUNE_CHANCE;
 
-        if (level.random.nextFloat() > chance) return;
+        if (level.getRandom().nextFloat() > chance) return;
 
         DropProfile profile = DropProfile.getDropProfile(isHibernationBlock, isFertileBlock, isWormyBlock, isMuddyBlock, isRaining);
         int dropCount = weightedRandom(level, profile.min(), profile.max(), profile.lowChance());
@@ -69,6 +72,6 @@ public class WormDropLogic {
     }
 
     private static int weightedRandom(Level level, int low, int high, float lowChance) {
-        return level.random.nextFloat() < lowChance ? low : high;
+        return level.getRandom().nextFloat() < lowChance ? low : high;
     }
 }
