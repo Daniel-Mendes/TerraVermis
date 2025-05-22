@@ -2,11 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.0.5+1.21.5] - 2025-05-22
 
 ### ✨ Features
 
 - Added Fisherman villager trades for Earthworm and Fishing Rod with Bait.
+
+### 🐛 Bug Fixes
+
+- Fixed particle textures form Wormy Mycelium and Wormy Podzol.
+- Fixed Wormy Blocks mineable with shovel and drop blocks.
 
 ## [1.0.4+1.21.5] - 2025-05-20
 
