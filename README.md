@@ -1,3 +1,5 @@
+![TerraVermis Logo](common/src/main/resources/terra_vermis.png)
+
 # TerraVermis
 
 *Worms that bring the soil to life.*
