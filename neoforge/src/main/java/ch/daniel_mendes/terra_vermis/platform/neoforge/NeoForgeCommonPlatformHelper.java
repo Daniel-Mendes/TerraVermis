@@ -1,17 +1,18 @@
 package ch.daniel_mendes.terra_vermis.platform.neoforge;
 
 import ch.daniel_mendes.terra_vermis.Constants;
+import ch.daniel_mendes.terra_vermis.mixin.neoforge.CropBlockAccessorNeoForge;
 import ch.daniel_mendes.terra_vermis.platform.services.ICommonPlatformHelper;
-import ch.daniel_mendes.terra_vermis.registry.CreativeModeTabsRegistry;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -97,5 +98,10 @@ public class NeoForgeCommonPlatformHelper implements ICommonPlatformHelper {
     @Override
     public Supplier<CreativeModeTab> registerCreativeModeTab(String name, Supplier<CreativeModeTab> tab) {
         return CREATIVE_MOD_TAB.register(name, tab);
+    }
+
+    @Override
+    public float getGrowthSpeed(Block block, BlockGetter level, BlockPos pos) {
+        return CropBlockAccessorNeoForge.callGetGrowthSpeed(block.defaultBlockState(), level, pos);
     }
 }

@@ -1,6 +1,7 @@
 package ch.daniel_mendes.terra_vermis.mixin.block;
 
 import ch.daniel_mendes.terra_vermis.block.WormyFarmBlock;
+import ch.daniel_mendes.terra_vermis.platform.Services;
 import ch.daniel_mendes.terra_vermis.registry.BlocksRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -28,7 +29,7 @@ public class CropBlockMixin {
             int age = cropBlock.getAge(state);
 
             if (age < cropBlock.getMaxAge()) {
-                float growthSpeed = CropBlockAccessor.callGetGrowthSpeed(cropBlock, level, pos);
+                float growthSpeed = Services.COMMON.getGrowthSpeed(cropBlock, level, pos);
                 growthSpeed *= FASTER_GROWTH_RATE;
 
                 if (random.nextInt((int) (25 / growthSpeed) + 1) == 0) {

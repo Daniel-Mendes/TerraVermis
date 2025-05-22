@@ -1,8 +1,10 @@
 package ch.daniel_mendes.terra_vermis.platform.fabric;
 
+import ch.daniel_mendes.terra_vermis.mixin.fabric.CropBlockAccessorFabric;
 import ch.daniel_mendes.terra_vermis.platform.services.ICommonPlatformHelper;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
@@ -10,7 +12,7 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -77,5 +79,10 @@ public class FabricCommonPlatformHelper implements ICommonPlatformHelper {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ICommonPlatformHelper.createCreativeModeTabId(name), tab.get());
 
         return tab;
+    }
+
+    @Override
+    public float getGrowthSpeed(Block block, BlockGetter level, BlockPos pos) {
+        return CropBlockAccessorFabric.callGetGrowthSpeed(block, level, pos);
     }
 }

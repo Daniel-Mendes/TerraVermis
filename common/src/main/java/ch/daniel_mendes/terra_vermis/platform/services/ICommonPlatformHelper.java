@@ -1,6 +1,7 @@
 package ch.daniel_mendes.terra_vermis.platform.services;
 
 import ch.daniel_mendes.terra_vermis.Constants;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -8,6 +9,7 @@ import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -53,4 +55,6 @@ public interface ICommonPlatformHelper {
     void registerCompostable(Supplier<Item> item, float chance);
 
     Supplier<CreativeModeTab> registerCreativeModeTab(String name, Supplier<CreativeModeTab> tab);
+
+    float getGrowthSpeed(Block block, BlockGetter level, BlockPos pos);
 }
