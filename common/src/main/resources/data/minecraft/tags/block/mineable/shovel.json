@@ -3,6 +3,8 @@
   "values": [
     "terra_vermis:wormy_dirt",
     "terra_vermis:wormy_farmland",
-    "terra_vermis:wormy_grass_block"
+    "terra_vermis:wormy_grass_block",
+    "terra_vermis:wormy_podzol",
+    "terra_vermis:wormy_mycelium"
   ]
 }
