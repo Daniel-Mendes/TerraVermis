@@ -5,9 +5,9 @@
   "ingredients": [
     "minecraft:baked_potato",
     "minecraft:carrot",
+    "#c:mushrooms",
     "terra_vermis:earthworm",
-    "minecraft:bowl",
-    "minecraft:red_mushroom"
+    "minecraft:bowl"
   ],
   "result": {
     "count": 1,
