@@ -19,6 +19,7 @@ public class CreativeModeTabsRegistry {
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ItemsRegistry.EARTHWORM.get());
                 output.accept(ItemsRegistry.FISHING_ROD_WITH_BAIT.get());
+                output.accept(ItemsRegistry.EARTHWORM_STEW.get());
                 output.accept(BlocksRegistry.WORMY_DIRT.get());
                 output.accept(BlocksRegistry.WORMY_GRASS_BLOCK.get());
                 output.accept(BlocksRegistry.WORMY_FARMLAND.get());

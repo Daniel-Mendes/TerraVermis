@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "terra_vermis:earthworm_stew",
+  "ingredients": [
+    "minecraft:baked_potato",
+    "minecraft:carrot",
+    "minecraft:brown_mushroom",
+    "terra_vermis:earthworm",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "terra_vermis:earthworm_stew"
+  }
+}

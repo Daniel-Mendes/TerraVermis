@@ -5,7 +5,9 @@ import ch.daniel_mendes.terra_vermis.platform.Services;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
@@ -25,6 +27,8 @@ public class ItemsRegistry {
                 .build()
         )
     );
+
+    public static final Supplier<Item> EARTHWORM_STEW = Services.COMMON.registerItem("earthworm_stew", new Item.Properties().stacksTo(1).food(FoodsRegistry.EARTHWORM_STEW).usingConvertsTo(Items.BOWL));
 
     public static final Supplier<Item> FISHING_ROD_WITH_BAIT = Services.COMMON.registerItem("fishing_rod_with_bait", FishingRodWithBaitItem::new, new Item.Properties().durability(64).enchantable(1));
 }

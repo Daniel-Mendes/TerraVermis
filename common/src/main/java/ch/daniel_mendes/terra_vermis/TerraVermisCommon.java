@@ -9,6 +9,7 @@ public class TerraVermisCommon {
         BlocksRegistry.init();
         CreativeModeTabsRegistry.init();
         TagsRegistry.init();
+        FoodsRegistry.init();
         CompostableItemRegistry.init();
         VillagerTradesRegistry.init();
     }
