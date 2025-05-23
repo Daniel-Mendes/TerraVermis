@@ -16,6 +16,7 @@ public class TagsRegistry {
         public static final TagKey<Block> HIBERNATION_BLOCKS = create("hibernation_blocks");
         public static final TagKey<Block> MUDDY_BLOCKS = create("muddy_blocks");
         public static final TagKey<Block> WORMY_BLOCKS = create("wormy_blocks");
+        public static final TagKey<Block> TILLABLE_BLOCKS = create("tillable_blocks");
 
         private static TagKey<Block> create(String name) {
             return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));

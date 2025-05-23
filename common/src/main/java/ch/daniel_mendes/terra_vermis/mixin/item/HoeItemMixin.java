@@ -1,18 +1,22 @@
 package ch.daniel_mendes.terra_vermis.mixin.item;
 
 import ch.daniel_mendes.terra_vermis.registry.BlocksRegistry;
+import ch.daniel_mendes.terra_vermis.registry.TagsRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -20,12 +24,21 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(HoeItem.class)
 public class HoeItemMixin {
 
+    @Unique
+    private static final TagKey<Block> TILLABLE_BLOCKS = TagsRegistry.BlockTags.TILLABLE_BLOCKS;
+
     @Inject(method = "useOn", at = @At("HEAD"), cancellable = true)
     public void onUseOn(UseOnContext context, CallbackInfoReturnable<InteractionResult> cir) {
         Level level = context.getLevel();
         BlockPos blockPos = context.getClickedPos();
+        BlockState state = level.getBlockState(blockPos);
 
-        if (level.getBlockState(blockPos).getBlock() == BlocksRegistry.WORMY_DIRT.get()) {
+        if (state.is(TILLABLE_BLOCKS)) {
+            if (!HoeItem.onlyIfAirAbove(context)) {
+               cir.setReturnValue(InteractionResult.PASS);
+                return;
+            }
+
             Player player = context.getPlayer();
             level.playSound(player, blockPos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 1.0F);
 
