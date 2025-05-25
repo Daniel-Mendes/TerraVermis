@@ -2,7 +2,8 @@ package ch.daniel_mendes.terra_vermis.mixin.entity.animal;
 
 import ch.daniel_mendes.terra_vermis.entity.ai.goal.EatEarthwormBlockGoal;
 import ch.daniel_mendes.terra_vermis.entity.animal.ChickenAccessor;
-import ch.daniel_mendes.terra_vermis.mixin.entity.animal.util.EarthwormEatingLogic;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
@@ -60,7 +61,23 @@ public class PigAnimalMixin extends Animal implements ChickenAccessor {
     public void handleEntityEvent(byte id) {
         if (id == EatEarthwormBlockGoal.EAT_ANIMATION_EVENT) {
             this.eatAnimationTick = EatEarthwormBlockGoal.EAT_ANIMATION_TICKS + this.random.nextInt(20);
-            EarthwormEatingLogic.handleEatParticle(this.level(), this, this.random);
+
+            if (this.level().isClientSide) {
+                BlockParticleOption particle = new BlockParticleOption(
+                        ParticleTypes.BLOCK, this.getBlockStateOn());
+
+                // Add particles on the ground
+                for (int i = 0; i < 5; i++) {
+                    double x = this.getX() + this.random.nextGaussian() * 0.2;
+                    double y = this.getY() + this.random.nextGaussian() * 0.2;
+                    double z = this.getZ() + this.random.nextGaussian() * 0.2;
+                    this.level().addParticle(particle,
+                            x, y, z,
+                            this.random.nextGaussian() * 0.1,
+                            this.random.nextGaussian() * 0.1,
+                            this.random.nextGaussian() * 0.1);
+                }
+            }
         } else {
             super.handleEntityEvent(id);
         }
