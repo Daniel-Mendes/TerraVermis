@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0+1.21.5] - 2025-05-25
+
+### ✨ Features
+
+- Added Earthworm Stew recipe and advancement.
+- Added Fishing Boober with Bait rendering.
+- Added Fishing Rod with Bait advancement.
+- Added Fishing Rod with Bait to Shipwreck loot tables.
+
+### 🐛 Bug Fixes
+
+- Fixed Hoe item not usable on Wormy Dirt and Wormy Grass Block.
+- Fixed Earthworm not being feedable to pigs.
+
 ## [1.0.5+1.21.5] - 2025-05-22
 
 ### ✨ Features
