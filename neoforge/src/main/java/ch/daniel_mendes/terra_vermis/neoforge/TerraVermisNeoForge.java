@@ -13,6 +13,7 @@ public class TerraVermisNeoForge {
         NeoForgeCommonPlatformHelper.ITEMS.register(bus);
         NeoForgeCommonPlatformHelper.BLOCKS.register(bus);
         NeoForgeCommonPlatformHelper.CREATIVE_MOD_TAB.register(bus);
+        NeoForgeCommonPlatformHelper.ENTITY_TYPES.register(bus);
 
         TerraVermisCommon.init();
     }
