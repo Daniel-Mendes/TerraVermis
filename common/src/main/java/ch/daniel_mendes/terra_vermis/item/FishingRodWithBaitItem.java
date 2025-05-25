@@ -18,14 +18,15 @@ import net.minecraft.world.level.gameevent.GameEvent;
 
 public class FishingRodWithBaitItem extends FishingRodItem {
 
+    private static final int EARTHWORM_FISHING_TIME_REDUCTION = 100;
+    private static final int EARTHWORM_FISHING_LUCK_BONUS = 1;
+
     public FishingRodWithBaitItem(Properties properties) {
         super(properties);
     }
 
     @Override
     public InteractionResult use(Level level, Player player, InteractionHand hand) {
-        //super.use(level, player, hand);
-
         ItemStack itemStack = player.getItemInHand(hand);
 
         if (player.fishing != null) {
@@ -57,8 +58,8 @@ public class FishingRodWithBaitItem extends FishingRodItem {
                     0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F)
             );
             if (level instanceof ServerLevel serverlevel) {
-                int j = (int)(EnchantmentHelper.getFishingTimeReduction(serverlevel, itemStack, player) * 20.0F);
-                int k = EnchantmentHelper.getFishingLuckBonus(serverlevel, itemStack, player);
+                int j = (int) (EnchantmentHelper.getFishingTimeReduction(serverlevel, itemStack, player) * 20.0F) + EARTHWORM_FISHING_TIME_REDUCTION;
+                int k = EnchantmentHelper.getFishingLuckBonus(serverlevel, itemStack, player) + EARTHWORM_FISHING_LUCK_BONUS;
                 Projectile.spawnProjectile(new FishingHookWithBait(player, level, k, j), serverlevel, itemStack);
             }
 

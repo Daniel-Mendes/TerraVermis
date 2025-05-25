@@ -8,10 +8,8 @@
     "block.ComposterBlockMixin",
     "block.CropBlockMixin",
     "block.SpreadingSnowyDirtBlockMixin",
-    "entity.FishingHookMixin",
     "entity.animal.ChickenAnimalMixin",
-    "item.HoeItemMixin",
-    "item.enchantment.EnchantmentHelperMixin"
+    "item.HoeItemMixin"
   ],
   "client": [
     "client.ChickenModelMixin",

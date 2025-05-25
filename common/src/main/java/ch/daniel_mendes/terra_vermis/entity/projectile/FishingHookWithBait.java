@@ -1,10 +1,15 @@
 package ch.daniel_mendes.terra_vermis.entity.projectile;
 
 import ch.daniel_mendes.terra_vermis.registry.EntityTypesRegistry;
+import ch.daniel_mendes.terra_vermis.registry.ItemsRegistry;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.FishingHook;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
@@ -47,5 +52,38 @@ public class FishingHookWithBait extends FishingHook {
         this.setXRot((float)(Mth.atan2(vec3.y, vec3.horizontalDistance()) * 180.0F / (float)Math.PI));
         this.yRotO = this.getYRot();
         this.xRotO = this.getXRot();
+    }
+
+    private boolean shouldStopFishing(Player player) {
+        ItemStack mainHandItem = player.getMainHandItem();
+        ItemStack offhandItem = player.getOffhandItem();
+
+        boolean hasFishingRodWithBait = mainHandItem.is(ItemsRegistry.FISHING_ROD_WITH_BAIT.get()) || offhandItem.is(ItemsRegistry.FISHING_ROD_WITH_BAIT.get());
+
+        if (!player.isRemoved() && player.isAlive() && hasFishingRodWithBait && !(this.distanceToSqr(player) > 1024.0)) {
+            return false;
+        } else {
+            this.discard();
+            return true;
+        }
+    }
+
+    @Override
+    public int retrieve(ItemStack stack) {
+        int result = super.retrieve(stack);
+        if (result == 0) return result;
+
+        Player player = this.getPlayerOwner();
+
+        if (!this.level().isClientSide && player != null && !this.shouldStopFishing(player) && stack.is(ItemsRegistry.FISHING_ROD_WITH_BAIT.get())) {
+            // Replace the item in the correct hand
+            if (player.getMainHandItem() == stack) {
+                player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.FISHING_ROD));
+            } else if (player.getOffhandItem() == stack) {
+                player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(Items.FISHING_ROD));
+            }
+        }
+
+        return result;
     }
 }
