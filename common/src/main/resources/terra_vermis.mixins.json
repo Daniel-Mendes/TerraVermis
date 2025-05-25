@@ -16,8 +16,7 @@
   "client": [
     "client.ChickenModelMixin",
     "client.ChickenRendererMixin",
-    "client.ChickenRenderStateMixin",
-    "client.FishingHookRendererMixin"
+    "client.ChickenRenderStateMixin"
   ],
   "server": [],
   "injectors": {

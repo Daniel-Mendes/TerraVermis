@@ -8,6 +8,9 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
@@ -34,6 +37,7 @@ public class NeoForgeCommonPlatformHelper implements ICommonPlatformHelper {
     );
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, Constants.MOD_ID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MOD_TAB = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB, Constants.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(BuiltInRegistries.ENTITY_TYPE, Constants.MOD_ID);
     public static final Map<ResourceKey<VillagerProfession>, Int2ObjectMap<List<VillagerTrades.ItemListing>>> TRADES = new HashMap<>();
 
     @Override
@@ -64,6 +68,11 @@ public class NeoForgeCommonPlatformHelper implements ICommonPlatformHelper {
     @Override
     public Supplier<Item> registerItem(ResourceKey<Item> key, Function<Item.Properties, Item> factory, Item.Properties properties) {
         return ITEMS.register(key.location().getPath(), () -> factory.apply(properties.setId(key)));
+    }
+
+    @Override
+    public <T extends Entity> Supplier<EntityType<T>> registerEntityType(String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height, int clientTrackingRange) {
+        return ENTITY_TYPES.register(name, () -> EntityType.Builder.of(factory, category).sized(width, height).clientTrackingRange(clientTrackingRange).build(ICommonPlatformHelper.createEntityTypeId(name)));
     }
 
     @Override

@@ -1,13 +1,19 @@
 package ch.daniel_mendes.terra_vermis.platform.fabric;
 
+import ch.daniel_mendes.terra_vermis.Constants;
 import ch.daniel_mendes.terra_vermis.mixin.fabric.CropBlockAccessorFabric;
 import ch.daniel_mendes.terra_vermis.platform.services.ICommonPlatformHelper;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
@@ -56,6 +62,12 @@ public class FabricCommonPlatformHelper implements ICommonPlatformHelper {
 
         Registry.register(BuiltInRegistries.ITEM, key, item);
         return () -> item;
+    }
+
+    @Override
+    public <T extends Entity> Supplier<EntityType<T>> registerEntityType(String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height, int clientTrackingRange) {
+       EntityType<T> registry = Registry.register(BuiltInRegistries.ENTITY_TYPE, Constants.id(name), EntityType.Builder.of(factory, category).sized(width, height).clientTrackingRange(clientTrackingRange).build(ICommonPlatformHelper.createEntityTypeId(name)));
+        return () -> registry;
     }
 
     @Override

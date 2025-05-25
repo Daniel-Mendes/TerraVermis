@@ -7,6 +7,7 @@ public class TerraVermisCommon {
     public static void init() {
         ItemsRegistry.init();
         BlocksRegistry.init();
+        EntityTypesRegistry.init();
         CreativeModeTabsRegistry.init();
         TagsRegistry.init();
         FoodsRegistry.init();

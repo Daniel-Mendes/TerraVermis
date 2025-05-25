@@ -5,12 +5,14 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -36,6 +38,10 @@ public interface ICommonPlatformHelper {
         return ResourceKey.create(Registries.FEATURE, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
     }
 
+    static ResourceKey<EntityType<?>> createEntityTypeId(String name) {
+        return ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, name));
+    }
+
     Supplier<Block> registerBlock(ResourceKey<Block> id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties);
 
     Supplier<Block> registerBlock(String name, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties);
@@ -47,6 +53,8 @@ public interface ICommonPlatformHelper {
     Supplier<Item> registerItem(String name, Function<Item.Properties, Item> factory, Item.Properties properties);
 
     Supplier<Item> registerItem(ResourceKey<Item> id, Function<Item.Properties, Item> factory, Item.Properties properties);
+
+    <T extends Entity> Supplier<EntityType<T>> registerEntityType(String name, EntityType.EntityFactory<T> factory, MobCategory category, float width, float height, int clientTrackingRange);
 
     <T extends Feature<?>> Supplier<T> registerFeature(String name, Supplier<T> feature);
 
